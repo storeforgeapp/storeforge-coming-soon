@@ -76,7 +76,7 @@ export default function Home() {
         className="absolute inset-x-0 bottom-0 h-[42%] bg-[linear-gradient(180deg,rgba(255,255,255,0),rgba(246,244,242,0.42),rgba(246,244,242,0.78))]"
       />
 
-      <div className="relative z-10 mx-auto grid min-h-screen w-full max-w-[1220px] grid-rows-[auto_1fr_auto] px-6 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+      <div className="relative z-10 mx-auto grid min-h-screen w-full max-w-[1220px] grid-rows-[auto_1fr_auto] px-4 py-6 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
         <header className="flex w-full justify-center">
           <Image
             src={sfLogo}
@@ -86,14 +86,14 @@ export default function Home() {
           />
         </header>
 
-        <section className="flex w-full items-center justify-center py-8 sm:py-10 lg:py-12">
-          <div className="flex w-full max-w-[46rem] flex-col items-center gap-5 pt-2 text-center sm:gap-6 sm:pt-3 lg:gap-7 lg:pt-4">
+        <section className="flex w-full items-center justify-center py-6 sm:py-10 lg:py-12">
+          <div className="flex w-full max-w-[46rem] flex-col items-center gap-4 pt-1 text-center sm:gap-6 sm:pt-3 lg:gap-7 lg:pt-4">
 
-            <h1 className="max-w-[12ch] text-center font-[family:var(--font-sora)] text-[3.4rem] font-semibold leading-[0.95] tracking-[-0.08em] text-[#657089] [text-shadow:0_8px_30px_rgba(255,255,255,0.38)] sm:text-[5rem] lg:text-[6rem]">
+            <h1 className="max-w-[12ch] text-center font-[family:var(--font-sora)] text-[clamp(3rem,16vw,3.9rem)] font-semibold leading-[0.95] tracking-[-0.07em] text-[#657089] [text-shadow:0_8px_30px_rgba(255,255,255,0.38)] sm:text-[5rem] lg:text-[6rem]">
               Coming soon!
             </h1>
 
-            <div className="relative w-full rounded-[2rem] border border-white/60 bg-white/28 px-6 py-8 shadow-[0_24px_72px_rgba(147,158,182,0.18),inset_0_1px_0_rgba(255,255,255,0.75)] backdrop-blur-[18px] sm:px-10 sm:py-10 lg:rounded-[2.25rem] lg:px-12 lg:py-12">
+            <div className="relative w-full rounded-[1.7rem] border border-white/60 bg-white/28 px-4 py-6 shadow-[0_24px_72px_rgba(147,158,182,0.18),inset_0_1px_0_rgba(255,255,255,0.75)] backdrop-blur-[18px] sm:px-10 sm:py-10 lg:rounded-[2.25rem] lg:px-12 lg:py-12">
               <div
                 aria-hidden="true"
                 className="absolute inset-0 rounded-[inherit] bg-[linear-gradient(180deg,rgba(255,255,255,0.36),rgba(255,255,255,0.1))]"
@@ -104,10 +104,10 @@ export default function Home() {
               />
 
               <div className="relative mx-auto flex max-w-[32rem] flex-col items-center gap-4 text-center sm:gap-5">
-                <h2 className="font-[family:var(--font-sora)] text-[1.95rem] font-medium tracking-[-0.04em] text-[#5f697f] sm:text-[2.2rem]">
+                <h2 className="font-[family:var(--font-sora)] text-[clamp(1.8rem,9vw,2.18rem)] font-medium tracking-[-0.04em] text-[#5f697f] sm:text-[2.2rem]">
                   Build your online store in minutes
                 </h2>
-                <p className="max-w-[31rem] text-sm leading-6 text-[#767f95] sm:text-[0.98rem] sm:leading-7">
+                <p className="max-w-[31rem] text-[0.95rem] leading-7 text-[#767f95] sm:text-[0.98rem] sm:leading-7">
                   Sell via website + WhatsApp - no coding needed. Join the
                   Storeforge waitlist for early access and launch updates.
                 </p>
@@ -132,7 +132,7 @@ export default function Home() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex h-12 shrink-0 items-center justify-center rounded-full border border-white/85 bg-white/92 px-6 text-sm font-medium text-[#666f84] shadow-[0_8px_24px_rgba(161,170,190,0.18),inset_0_1px_0_rgba(255,255,255,0.86)] transition duration-200 hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-4 focus:ring-white/55 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
+                    className="inline-flex h-12 w-full shrink-0 items-center justify-center rounded-full border border-white/85 bg-white/92 px-6 text-sm font-medium text-[#666f84] shadow-[0_8px_24px_rgba(161,170,190,0.18),inset_0_1px_0_rgba(255,255,255,0.86)] transition duration-200 hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-4 focus:ring-white/55 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 sm:w-auto"
                   >
                     {isSubmitting ? "Submitting..." : "Join Waitlist"}
                   </button>
@@ -156,10 +156,10 @@ export default function Home() {
           </div>
         </section>
 
-        <footer className="relative z-20 mt-8 flex min-h-[11.5rem] items-end justify-center overflow-hidden pt-8 sm:mt-10 sm:min-h-[14.5rem] sm:pt-10 lg:min-h-[17rem] lg:pt-12">
+        <footer className="relative z-20 mt-6 flex min-h-[10.25rem] items-end justify-center overflow-hidden pt-6 sm:mt-10 sm:min-h-[14.5rem] sm:pt-10 lg:min-h-[17rem] lg:pt-12">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-[0.9rem] text-center font-[family:var(--font-sora)] text-[6.9rem] font-semibold tracking-[-0.105em] sm:bottom-[1.1rem] sm:text-[9.7rem] lg:bottom-[1.4rem] lg:text-[14.2rem]"
+            className="pointer-events-none absolute inset-x-0 bottom-[0.45rem] text-center font-[family:var(--font-sora)] text-[clamp(3.2rem,18vw,4rem)] font-semibold tracking-[-0.09em] sm:bottom-[1.1rem] sm:text-[9.7rem] sm:tracking-[-0.105em] lg:bottom-[1.4rem] lg:text-[14.2rem]"
           >
             <span
               className="absolute inset-0 text-[#e9f0fc]/66 blur-[2.4px]"
@@ -196,11 +196,15 @@ export default function Home() {
             </span>
           </div>
 
-          <div className="relative z-10 pb-3 text-center text-[0.72rem] tracking-[0.01em] text-[#7e869a] [text-shadow:0_2px_16px_rgba(255,255,255,0.6)] sm:pb-4 sm:text-xs">
+          <div className="relative z-10 flex max-w-[20rem] flex-wrap items-center justify-center gap-x-1.5 gap-y-1 pb-2 text-center text-[0.72rem] tracking-[0.01em] text-[#7e869a] [text-shadow:0_2px_16px_rgba(255,255,255,0.6)] sm:max-w-none sm:gap-x-2 sm:pb-4 sm:text-xs">
             <span>&copy;2026 Storeforge</span>
-            <span className="mx-2 text-[#bcc1ce]">&middot;</span>
+            <span className="hidden text-[#bcc1ce] min-[360px]:inline">
+              &middot;
+            </span>
             <span>Built for modern sellers</span>
-            <span className="mx-2 text-[#bcc1ce]">&middot;</span>
+            <span className="hidden text-[#bcc1ce] min-[360px]:inline">
+              &middot;
+            </span>
             <span>Waitlist</span>
           </div>
         </footer>
