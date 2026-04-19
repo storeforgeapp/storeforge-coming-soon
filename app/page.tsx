@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import Image from "next/image";
-import sfLogo from "@/public/sf_logo.webp";
+import sfLogo from "@/public/sf_logo.png";
 
 type SubmitStatus = "idle" | "success" | "error";
 
