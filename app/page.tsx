@@ -1,66 +1,7 @@
-"use client";
-
-import { useState, type FormEvent } from "react";
 import Image from "next/image";
 import sfLogo from "@/public/sf_logo.png";
 
-type SubmitStatus = "idle" | "success" | "error";
-
 export default function Home() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
-  const [statusMessage, setStatusMessage] = useState("");
-
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    if (isSubmitting) {
-      return;
-    }
-
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    const emailValue = formData.get("email");
-    const email = typeof emailValue === "string" ? emailValue.trim() : "";
-
-    if (!email) {
-      setSubmitStatus("error");
-      setStatusMessage("Please enter a valid email address.");
-      return;
-    }
-
-    setIsSubmitting(true);
-    setSubmitStatus("idle");
-    setStatusMessage("");
-
-    try {
-      const response = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      const result = (await response.json().catch(() => null)) as
-        | { ok?: boolean; error?: string }
-        | null;
-
-      if (!response.ok || !result?.ok) {
-        throw new Error(result?.error ?? "Failed to submit waitlist");
-      }
-
-      form.reset();
-      setSubmitStatus("success");
-      setStatusMessage("Thanks! You have been added to the waitlist.");
-    } catch {
-      setSubmitStatus("error");
-      setStatusMessage("Could not join the waitlist now. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  }
-
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#f6f4f2] text-[#687289]">
       <div
@@ -114,7 +55,8 @@ export default function Home() {
 
                 <form
                   className="flex w-full max-w-[27rem] flex-col gap-3 pt-1 sm:max-w-[30rem] sm:flex-row sm:items-center"
-                  onSubmit={handleSubmit}
+                  action="https://formspree.io/f/xzdylnvr"
+                  method="POST"
                 >
                   <label htmlFor="email" className="sr-only">
                     Email address
@@ -126,29 +68,15 @@ export default function Home() {
                     placeholder="Enter email"
                     autoComplete="email"
                     required
-                    disabled={isSubmitting}
                     className="h-12 w-full rounded-full border border-[#d8dee9] bg-white/84 px-5 text-sm text-[#5f6981] shadow-[inset_0_1px_0_rgba(255,255,255,0.78),0_4px_16px_rgba(160,170,190,0.08)] outline-none transition duration-200 placeholder:text-[#939bae] hover:border-[#cbd3e1] focus:border-white focus:bg-white focus:ring-4 focus:ring-white/45"
                   />
                   <button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="inline-flex h-12 w-full shrink-0 items-center justify-center rounded-full border border-white/85 bg-white/92 px-6 text-sm font-medium text-[#666f84] shadow-[0_8px_24px_rgba(161,170,190,0.18),inset_0_1px_0_rgba(255,255,255,0.86)] transition duration-200 hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-4 focus:ring-white/55 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 sm:w-auto"
+                    className="inline-flex h-12 w-full shrink-0 items-center justify-center rounded-full border border-white/85 bg-white/92 px-6 text-sm font-medium text-[#666f84] shadow-[0_8px_24px_rgba(161,170,190,0.18),inset_0_1px_0_rgba(255,255,255,0.86)] transition duration-200 hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-4 focus:ring-white/55 sm:w-auto"
                   >
-                    {isSubmitting ? "Submitting..." : "Join Waitlist"}
+                    Join Waitlist
                   </button>
                 </form>
-                {statusMessage ? (
-                  <p
-                    aria-live="polite"
-                    className={`text-sm ${
-                      submitStatus === "success"
-                        ? "text-[#4f6f55]"
-                        : "text-[#8f5e66]"
-                    }`}
-                  >
-                    {statusMessage}
-                  </p>
-                ) : null}
               </div>
             </div>
 
