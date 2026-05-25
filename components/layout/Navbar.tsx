@@ -17,6 +17,7 @@ export default function Navbar() {
           <Image
             src="/images/sf_logo.png"
             alt="Store Forge Logo"
+            className="h-auto"
             width={130}
             height={30}
             style={{ height: "auto" }}

@@ -94,10 +94,6 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: var(--font-rethink-sans), sans-serif;
 }
@@ -156,3 +152,57 @@ body {
         @apply font-sans;
     }
 }
+
+/* Floating Animations for Landing Page Badges */
+@keyframes float-one {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float-two {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes float-three {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes float-four {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-1 {
+  animation: float-one 5s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-two 6s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: float-three 5.5s ease-in-out infinite;
+}
+
+.animate-float-4 {
+  animation: float-four 4.5s ease-in-out infinite;
+}
+

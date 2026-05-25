@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Rethink_Sans } from "next/font/google";
-import "./globals.css";
-import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import "./globals.css";
+import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
+import { cn } from "@/lib/utils";
 
 const rethinkSans = Rethink_Sans({
   variable: "--font-rethink-sans",
@@ -12,7 +12,7 @@ const rethinkSans = Rethink_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Storeforge | Coming Soon",
+  title: "Storeforge | Build Your Online Store in Minutes",
   description:
     "Storeforge helps businesses build their online store in minutes. Join the early access list.",
 };
