@@ -32,8 +32,7 @@ export default function RootLayout({
           {/* Sticky/Fixed Navbar */}
           <Navbar />
 
-          {/* Main content area with left/right padding and top padding for sticky Navbar */}
-          <main className="relative z-10 mx-auto w-full max-w-305 px-4 sm:px-8 lg:px-12 pt-32 pb-12 flex-1 flex flex-col justify-center">
+          <main className="relative z-10 w-full flex-1 flex flex-col">
             {children}
           </main>
 
